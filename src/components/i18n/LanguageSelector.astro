@@ -1,0 +1,143 @@
+---
+import { languages, type Lang, getLocalizedPath } from "@/utils/i18n";
+
+interface Props {
+    currentLang: Lang;
+}
+
+const { currentLang } = Astro.props;
+---
+
+<div class="language-selector" id="language-selector">
+    <button class="lang-toggle" id="lang-toggle" aria-label="Select language">
+        <span class="lang-flag">{languages[currentLang].flag}</span>
+        <span class="lang-label">{languages[currentLang].label}</span>
+        <svg
+            class="lang-chevron"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+        >
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </button>
+    <div class="lang-dropdown" id="lang-dropdown">
+        {
+            Object.entries(languages).map(([code, { label, flag }]) => (
+                <a
+                    href={getLocalizedPath(code as Lang)}
+                    class:list={[
+                        "lang-option",
+                        { active: code === currentLang },
+                    ]}
+                    data-lang={code}
+                >
+                    <span class="lang-flag">{flag}</span>
+                    <span>{label}</span>
+                </a>
+            ))
+        }
+    </div>
+</div>
+
+<script>
+    function initLangSelector() {
+        const toggle = document.getElementById("lang-toggle");
+        const dropdown = document.getElementById("lang-dropdown");
+        if (!toggle || !dropdown) return;
+
+        toggle.addEventListener("click", () => {
+            dropdown.classList.toggle("open");
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!(e.target as Element)?.closest("#language-selector")) {
+                dropdown.classList.remove("open");
+            }
+        });
+    }
+    document.addEventListener("DOMContentLoaded", initLangSelector);
+    document.addEventListener("astro:page-load", initLangSelector);
+</script>
+
+<style>
+    .language-selector {
+        position: relative;
+        z-index: 100;
+    }
+    .lang-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        padding: 0.4em 0.8em;
+        background: var(--color-bg-glass);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        color: var(--color-text-primary);
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+    .lang-toggle:hover {
+        border-color: var(--color-border-hover);
+        background: var(--color-bg-secondary);
+    }
+    .lang-chevron {
+        transition: transform var(--transition-fast);
+    }
+    .lang-dropdown {
+        position: absolute;
+        top: calc(100% + 6px);
+        right: 0;
+        min-width: 160px;
+        background: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: all var(--transition-base);
+        overflow: hidden;
+    }
+    .lang-dropdown.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .lang-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        padding: 0.6em 1em;
+        color: var(--color-text-secondary);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all var(--transition-fast);
+    }
+    .lang-option:hover {
+        background: var(--color-bg-tertiary);
+        color: var(--color-text-primary);
+    }
+    .lang-option.active {
+        color: var(--color-accent-cyan);
+        background: rgba(100, 255, 218, 0.05);
+    }
+    .lang-flag {
+        font-size: 1.1em;
+    }
+    .lang-label {
+        display: none;
+    }
+
+    @media (min-width: 640px) {
+        .lang-label {
+            display: inline;
+        }
+    }
+</style>

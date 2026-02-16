@@ -1,0 +1,113 @@
+---
+import { generateCommitData } from "@/utils/github-api";
+
+const commitData = generateCommitData(20);
+const levelColors = [
+    "var(--color-bg-tertiary)",
+    "#0e4429",
+    "#006d32",
+    "#26a641",
+    "#39d353",
+];
+---
+
+<div class="commit-graph glass reveal-scale">
+    <div class="commit-header">
+        <span class="commit-label">📊 Coding Activity</span>
+        <div class="commit-legend">
+            <span class="legend-text">Less</span>
+            {
+                [0, 1, 2, 3, 4].map((level) => (
+                    <span
+                        class="legend-cell"
+                        style={`background: ${levelColors[level]}`}
+                    />
+                ))
+            }
+            <span class="legend-text">More</span>
+        </div>
+    </div>
+    <div class="commit-grid">
+        {
+            commitData.map((week) => (
+                <div class="commit-week">
+                    {week.map((day) => (
+                        <div
+                            class="commit-cell"
+                            style={`background: ${levelColors[day.level]}`}
+                            title={`${day.date}: ${day.count} contributions`}
+                        />
+                    ))}
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    .commit-graph {
+        padding: var(--space-lg);
+        border-radius: var(--radius-lg);
+        overflow-x: auto;
+    }
+    .commit-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--space-md);
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+    .commit-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--color-text-secondary);
+    }
+    .commit-legend {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .legend-text {
+        font-size: 0.7rem;
+        color: var(--color-text-muted);
+        margin: 0 2px;
+    }
+    .legend-cell {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+    }
+    .commit-grid {
+        display: flex;
+        gap: 3px;
+    }
+    .commit-week {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+    .commit-cell {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+        transition: transform var(--transition-fast);
+    }
+    .commit-cell:hover {
+        transform: scale(1.5);
+        outline: 1px solid var(--color-accent-cyan);
+    }
+
+    @media (max-width: 640px) {
+        .commit-cell {
+            width: 10px;
+            height: 10px;
+        }
+        .commit-grid {
+            gap: 2px;
+        }
+        .commit-week {
+            gap: 2px;
+        }
+    }
+</style>

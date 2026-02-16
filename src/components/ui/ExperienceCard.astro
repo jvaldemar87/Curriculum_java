@@ -1,0 +1,164 @@
+---
+import type { Lang } from "@/utils/i18n";
+
+interface ExperienceEntry {
+    title: string;
+    company: string;
+    startDate: string;
+    endDate: string;
+    location?: string;
+    tags: string[];
+}
+
+interface Props {
+    entry: ExperienceEntry;
+    lang: Lang;
+    index: number;
+}
+
+const { entry, lang, index } = Astro.props;
+
+function formatDate(dateStr: string, lang: Lang): string {
+    if (["Present", "Presente", "Présent"].includes(dateStr)) return dateStr;
+    const date = new Date(dateStr);
+    return date.toLocaleDateString(
+        lang === "es" ? "es-MX" : lang === "fr" ? "fr-FR" : "en-US",
+        {
+            year: "numeric",
+            month: "short",
+        },
+    );
+}
+---
+
+<div class="experience-card reveal" style={`--i: ${index}`}>
+    <div class="timeline-dot"></div>
+    <div class="card-content glass">
+        <div class="card-header">
+            <div>
+                <h3 class="card-title">{entry.title}</h3>
+                <p class="card-company">{entry.company}</p>
+            </div>
+            <div class="card-meta">
+                <span class="card-date">
+                    {formatDate(entry.startDate, lang)} — {
+                        formatDate(entry.endDate, lang)
+                    }
+                </span>
+                {
+                    entry.location && (
+                        <span class="card-location">📍 {entry.location}</span>
+                    )
+                }
+            </div>
+        </div>
+        <div class="card-body">
+            <slot />
+        </div>
+        <div class="card-tags">
+            {entry.tags.map((tag) => <span class="tag">{tag}</span>)}
+        </div>
+    </div>
+</div>
+
+<style>
+    .experience-card {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: var(--space-xl);
+    }
+    .experience-card::before {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 24px;
+        bottom: -24px;
+        width: 2px;
+        background: var(--color-border);
+    }
+    .experience-card:last-child::before {
+        display: none;
+    }
+    .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 18px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--gradient-accent);
+        box-shadow: 0 0 12px rgba(83, 130, 161, 0.4);
+        z-index: 1;
+    }
+    .card-content {
+        border-radius: var(--radius-lg);
+        padding: var(--space-lg);
+        transition:
+            transform var(--transition-base),
+            box-shadow var(--transition-base);
+    }
+    .card-content:hover {
+        transform: translateX(4px);
+        box-shadow: var(--shadow-md), var(--shadow-glow);
+    }
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+        margin-bottom: var(--space-md);
+    }
+    .card-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+    }
+    .card-company {
+        color: var(--color-accent-cyan);
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+    .card-meta {
+        text-align: right;
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+    }
+    .card-date {
+        display: block;
+        font-family: var(--font-mono);
+    }
+    .card-location {
+        display: block;
+        margin-top: 0.25rem;
+    }
+    .card-body {
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+    }
+    .card-body :global(ul) {
+        padding-left: 1.25rem;
+    }
+    .card-body :global(li) {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+    .card-body :global(strong) {
+        color: var(--color-accent-cyan);
+    }
+    .card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        margin-top: var(--space-md);
+    }
+
+    @media (max-width: 640px) {
+        .card-header {
+            flex-direction: column;
+        }
+        .card-meta {
+            text-align: left;
+        }
+    }
+</style>

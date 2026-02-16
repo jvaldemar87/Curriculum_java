@@ -1,0 +1,161 @@
+---
+interface Props {
+    title: string;
+    icon: string;
+    gridSize?: "small" | "medium" | "large";
+    tags?: string[];
+    class?: string;
+}
+
+const {
+    title,
+    icon,
+    gridSize = "medium",
+    tags = [],
+    class: className = "",
+} = Astro.props;
+
+const iconMap: Record<string, string> = {
+    java: "☕",
+    database: "🗄️",
+    devops: "⚙️",
+    python: "🐍",
+    default: "🔷",
+};
+
+const emoji = iconMap[icon] || iconMap.default;
+---
+
+<div
+    class:list={[
+        "bento-item",
+        "glass",
+        "reveal-scale",
+        `size-${gridSize}`,
+        className,
+    ]}
+>
+    <div class="bento-item-glow"></div>
+    <div class="bento-item-content">
+        <div class="bento-header">
+            <span class="bento-icon">{emoji}</span>
+            <h3 class="bento-title">{title}</h3>
+        </div>
+        <div class="bento-body">
+            <slot />
+        </div>
+        {
+            tags.length > 0 && (
+                <div class="bento-tags">
+                    {tags.slice(0, 5).map((tag) => (
+                        <span class="tag">{tag}</span>
+                    ))}
+                </div>
+            )
+        }
+    </div>
+</div>
+
+<style>
+    .bento-item {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        transition:
+            transform var(--transition-base),
+            box-shadow var(--transition-base);
+    }
+    .bento-item:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+    .bento-item-glow {
+        position: absolute;
+        inset: 0;
+        background: var(--gradient-glow);
+        opacity: 0;
+        transition: opacity var(--transition-base);
+        pointer-events: none;
+    }
+    .bento-item:hover .bento-item-glow {
+        opacity: 1;
+    }
+    .bento-item-content {
+        position: relative;
+        z-index: 1;
+        padding: var(--space-lg);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .bento-header {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        margin-bottom: var(--space-md);
+    }
+    .bento-icon {
+        font-size: 1.5rem;
+    }
+    .bento-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+    }
+    .bento-body {
+        flex: 1;
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+        line-height: 1.6;
+    }
+    .bento-body :global(h2) {
+        display: none;
+    }
+    .bento-body :global(p) {
+        margin-bottom: 0.75rem;
+    }
+    .bento-body :global(ul) {
+        padding-left: 1.25rem;
+    }
+    .bento-body :global(li) {
+        margin-bottom: 0.4rem;
+    }
+    .bento-body :global(strong) {
+        color: var(--color-accent-cyan);
+    }
+    .bento-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        margin-top: var(--space-md);
+    }
+
+    /* Grid sizing */
+    .size-large {
+        grid-column: span 1;
+    }
+    .size-medium {
+        grid-column: span 1;
+    }
+    .size-small {
+        grid-column: span 1;
+    }
+
+    @media (min-width: 640px) {
+        .size-large {
+            grid-column: span 2;
+        }
+        .size-medium {
+            grid-column: span 1;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .size-large {
+            grid-column: span 2;
+        }
+        .size-medium {
+            grid-column: span 1;
+        }
+    }
+</style>

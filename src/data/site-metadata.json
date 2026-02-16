@@ -1,0 +1,161 @@
+{
+    "site": {
+        "name": "Jesús Valdemar",
+        "url": "https://jvaldemar87.github.io/Curriculum_java"
+    },
+    "seo": {
+        "en": {
+            "title": "Jesús Valdemar — Senior Java Microservices Developer",
+            "description": "Portfolio of Jesús Valdemar Benítez Castañeda, a Senior Java Developer specializing in Microservices, Spring Boot, Apache Kafka, and Oracle SQL Optimization. Backend Specialist with 4+ years of experience building scalable enterprise systems.",
+            "keywords": [
+                "Java Microservices Developer",
+                "Backend Specialist",
+                "Spring Boot Expert",
+                "Oracle SQL Optimization Specialist",
+                "Senior Java Developer",
+                "Clean Architecture",
+                "Apache Kafka Developer",
+                "Mexico Software Engineer"
+            ]
+        },
+        "es": {
+            "title": "Jesús Valdemar — Desarrollador Senior de Microservicios Java",
+            "description": "Portafolio de Jesús Valdemar Benítez Castañeda, Desarrollador Senior Java especializado en Microservicios, Spring Boot, Apache Kafka y Optimización SQL en Oracle. Especialista Backend con 4+ años de experiencia construyendo sistemas empresariales escalables.",
+            "keywords": [
+                "Desarrollador Java Microservicios",
+                "Especialista Backend",
+                "Experto Spring Boot",
+                "Especialista Optimización SQL Oracle",
+                "Desarrollador Java Senior",
+                "Arquitectura Limpia",
+                "Desarrollador Apache Kafka"
+            ]
+        },
+        "fr": {
+            "title": "Jesús Valdemar — Développeur Senior Microservices Java",
+            "description": "Portfolio de Jesús Valdemar Benítez Castañeda, Développeur Senior Java spécialisé en Microservices, Spring Boot, Apache Kafka et Optimisation SQL Oracle. Spécialiste Backend avec 4+ ans d'expérience dans la construction de systèmes d'entreprise scalables.",
+            "keywords": [
+                "Développeur Java Microservices",
+                "Spécialiste Backend",
+                "Expert Spring Boot",
+                "Spécialiste Optimisation SQL Oracle",
+                "Développeur Java Senior",
+                "Architecture Propre",
+                "Développeur Apache Kafka"
+            ]
+        }
+    },
+    "ui": {
+        "en": {
+            "nav": {
+                "home": "Home",
+                "experience": "Experience",
+                "skills": "Skills",
+                "projects": "Projects",
+                "contact": "Contact"
+            },
+            "hero": {
+                "greeting": "Hello, I'm",
+                "role": "Senior Java Microservices Developer",
+                "cta": "View My Work",
+                "download_cv": "Download CV"
+            },
+            "sections": {
+                "experience": "Professional Experience",
+                "skills": "Technical Skills",
+                "projects": "Projects & Expertise",
+                "contact": "Get In Touch"
+            },
+            "terminal": {
+                "placeholder": "Type 'help' for a list of commands...",
+                "help_text": "Available commands: whoami, skills, experience, contact, clear"
+            },
+            "contact": {
+                "email": "Email",
+                "phone": "Phone",
+                "location": "Location",
+                "message": "Let's build something great together.",
+                "cta": "Send Email"
+            },
+            "footer": {
+                "rights": "All rights reserved.",
+                "built_with": "Built with Astro"
+            },
+            "present": "Present"
+        },
+        "es": {
+            "nav": {
+                "home": "Inicio",
+                "experience": "Experiencia",
+                "skills": "Habilidades",
+                "projects": "Proyectos",
+                "contact": "Contacto"
+            },
+            "hero": {
+                "greeting": "Hola, soy",
+                "role": "Desarrollador Senior de Microservicios Java",
+                "cta": "Ver Mi Trabajo",
+                "download_cv": "Descargar CV"
+            },
+            "sections": {
+                "experience": "Experiencia Profesional",
+                "skills": "Habilidades Técnicas",
+                "projects": "Proyectos y Especialidades",
+                "contact": "Contacto"
+            },
+            "terminal": {
+                "placeholder": "Escribe 'help' para ver los comandos...",
+                "help_text": "Comandos disponibles: whoami, skills, experience, contact, clear"
+            },
+            "contact": {
+                "email": "Correo",
+                "phone": "Teléfono",
+                "location": "Ubicación",
+                "message": "Construyamos algo grandioso juntos.",
+                "cta": "Enviar Correo"
+            },
+            "footer": {
+                "rights": "Todos los derechos reservados.",
+                "built_with": "Hecho con Astro"
+            },
+            "present": "Presente"
+        },
+        "fr": {
+            "nav": {
+                "home": "Accueil",
+                "experience": "Expérience",
+                "skills": "Compétences",
+                "projects": "Projets",
+                "contact": "Contact"
+            },
+            "hero": {
+                "greeting": "Bonjour, je suis",
+                "role": "Développeur Senior Microservices Java",
+                "cta": "Voir Mon Travail",
+                "download_cv": "Télécharger CV"
+            },
+            "sections": {
+                "experience": "Expérience Professionnelle",
+                "skills": "Compétences Techniques",
+                "projects": "Projets & Expertises",
+                "contact": "Me Contacter"
+            },
+            "terminal": {
+                "placeholder": "Tapez 'help' pour la liste des commandes...",
+                "help_text": "Commandes disponibles: whoami, skills, experience, contact, clear"
+            },
+            "contact": {
+                "email": "E-mail",
+                "phone": "Téléphone",
+                "location": "Localisation",
+                "message": "Construisons quelque chose de formidable ensemble.",
+                "cta": "Envoyer E-mail"
+            },
+            "footer": {
+                "rights": "Tous droits réservés.",
+                "built_with": "Fait avec Astro"
+            },
+            "present": "Présent"
+        }
+    }
+}

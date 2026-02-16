@@ -1,0 +1,23 @@
+{
+    "name": "curriculum-java-portfolio",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Portfolio for Jesús Valdemar Benítez Castañeda - Senior Java Microservices Developer",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "test": "npx playwright test",
+        "test:ui": "npx playwright test --ui"
+    },
+    "dependencies": {
+        "astro": "^4.16.0",
+        "@astrojs/check": "^0.9.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.6.0",
+        "@playwright/test": "^1.48.0"
+    }
+}

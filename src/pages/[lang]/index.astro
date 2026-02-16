@@ -1,0 +1,493 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import Terminal from "@/components/terminal/Terminal.astro";
+import BentoContainer from "@/components/bento/BentoContainer.astro";
+import BentoItem from "@/components/bento/BentoItem.astro";
+import LanguageSelector from "@/components/i18n/LanguageSelector.astro";
+import ExperienceCard from "@/components/ui/ExperienceCard.astro";
+import CommitGraph from "@/components/ui/CommitGraph.astro";
+import { getCollection } from "astro:content";
+import { useTranslations, getLocalizedPath, type Lang } from "@/utils/i18n";
+
+export function getStaticPaths() {
+    return [
+        { params: { lang: "en" } },
+        { params: { lang: "es" } },
+        { params: { lang: "fr" } },
+    ];
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+
+// Fetch content collections filtered by language
+const allExperience = await getCollection("experience");
+const experience = allExperience
+    .filter((e) => e.data.lang === lang)
+    .sort((a, b) => a.data.order - b.data.order);
+
+const allProjects = await getCollection("projects");
+const projects = allProjects
+    .filter((p) => p.data.lang === lang)
+    .sort((a, b) => a.data.order - b.data.order);
+
+const allBio = await getCollection("bio");
+const bio = allBio.find((b) => b.data.lang === lang);
+
+// Render content
+const renderedExperience = await Promise.all(
+    experience.map(async (entry) => {
+        const { Content } = await entry.render();
+        return { entry, Content };
+    }),
+);
+
+const renderedProjects = await Promise.all(
+    projects.map(async (entry) => {
+        const { Content } = await entry.render();
+        return { entry, Content };
+    }),
+);
+
+let bioHtml = "";
+if (bio) {
+    const { Content } = await bio.render();
+    // We'll get the raw body for terminal
+    bioHtml = bio.body || "";
+}
+
+const base = import.meta.env.BASE_URL || "/Curriculum_java";
+---
+
+<MainLayout lang={lang}>
+    <!-- Navigation -->
+    <nav class="navbar glass" id="main-nav">
+        <div class="container nav-inner">
+            <a href={getLocalizedPath(lang)} class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">JV</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#experience" class="nav-link">{t.nav.experience}</a>
+                <a href="#skills" class="nav-link">{t.nav.skills}</a>
+                <a href="#contact" class="nav-link">{t.nav.contact}</a>
+            </div>
+            <div class="nav-actions">
+                <LanguageSelector currentLang={lang} />
+                <button
+                    class="mobile-toggle"
+                    id="mobile-toggle"
+                    aria-label="Menu"
+                >
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid-pattern"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text reveal">
+                <p class="hero-greeting">{t.hero.greeting}</p>
+                <h1 class="hero-name">Jesús Valdemar</h1>
+                <h2 class="hero-role">{t.hero.role}</h2>
+                <div class="hero-actions">
+                    <a href="#experience" class="btn btn-primary"
+                        >{t.hero.cta}</a
+                    >
+                    <a
+                        href={`${base}/resume/cv-${lang}.pdf`}
+                        class="btn"
+                        target="_blank"
+                        rel="noopener">{t.hero.download_cv}</a
+                    >
+                </div>
+            </div>
+            <div class="hero-terminal">
+                <Terminal lang={lang} bioContent={bioHtml} />
+            </div>
+        </div>
+    </section>
+
+    <!-- Commit Activity -->
+    <section class="section" id="activity">
+        <div class="container">
+            <CommitGraph />
+        </div>
+    </section>
+
+    <!-- Skills / Bento Grid -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title reveal">{t.sections.skills}</h2>
+            <BentoContainer>
+                {
+                    renderedProjects.map(({ entry, Content }) => (
+                        <BentoItem
+                            title={entry.data.title}
+                            icon={entry.data.icon}
+                            gridSize={entry.data.gridSize}
+                            tags={entry.data.tags}
+                        >
+                            <Content />
+                        </BentoItem>
+                    ))
+                }
+            </BentoContainer>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="section section-alt" id="experience">
+        <div class="container">
+            <h2 class="section-title reveal">{t.sections.experience}</h2>
+            <div class="experience-timeline stagger">
+                {
+                    renderedExperience.map(({ entry, Content }, i) => {
+                        // Render to string by capturing HTML
+                        return (
+                            <ExperienceCard
+                                entry={entry.data}
+                                lang={lang}
+                                index={i}
+                            >
+                                <Content />
+                            </ExperienceCard>
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container contact-container">
+            <h2 class="section-title reveal">{t.sections.contact}</h2>
+            <p class="contact-message reveal">{t.contact.message}</p>
+            <div class="contact-grid reveal">
+                <a
+                    href="mailto:valdemar.benitez@outlook.com"
+                    class="contact-card glass"
+                >
+                    <span class="contact-icon">✉️</span>
+                    <span class="contact-label">{t.contact.email}</span>
+                    <span class="contact-value"
+                        >valdemar.benitez@outlook.com</span
+                    >
+                </a>
+                <a href="tel:+525550118928" class="contact-card glass">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-label">{t.contact.phone}</span>
+                    <span class="contact-value">+52 55 5011 8928</span>
+                </a>
+                <div class="contact-card glass">
+                    <span class="contact-icon">📍</span>
+                    <span class="contact-label">{t.contact.location}</span>
+                    <span class="contact-value">Mexico City, MX</span>
+                </div>
+            </div>
+            <div class="contact-cta reveal">
+                <a
+                    href="mailto:valdemar.benitez@outlook.com"
+                    class="btn btn-primary">{t.contact.cta}</a
+                >
+            </div>
+        </div>
+    </section>
+</MainLayout>
+
+<!-- Mobile Nav Script -->
+<script>
+    function initNav() {
+        const toggle = document.getElementById("mobile-toggle");
+        const links = document.getElementById("nav-links");
+        if (!toggle || !links) return;
+
+        toggle.addEventListener("click", () => {
+            links.classList.toggle("open");
+            toggle.classList.toggle("active");
+        });
+
+        // Navbar scroll effect
+        const nav = document.getElementById("main-nav");
+        if (nav) {
+            window.addEventListener("scroll", () => {
+                nav.classList.toggle("scrolled", window.scrollY > 50);
+            });
+        }
+    }
+    document.addEventListener("DOMContentLoaded", initNav);
+    document.addEventListener("astro:page-load", initNav);
+</script>
+
+<style>
+    /* ── Navbar ── */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 0.75rem 0;
+        transition: all var(--transition-base);
+        background: transparent;
+        border: none;
+        backdrop-filter: none;
+    }
+    .navbar.scrolled {
+        background: var(--color-bg-glass);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav-logo {
+        font-family: var(--font-mono);
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .logo-bracket {
+        color: var(--color-accent-blue);
+    }
+    .logo-text {
+        color: var(--color-text-primary);
+    }
+    .nav-links {
+        display: none;
+        gap: var(--space-lg);
+    }
+    .nav-link {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        text-decoration: none;
+        transition: color var(--transition-fast);
+        position: relative;
+    }
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-accent);
+        transition: width var(--transition-base);
+    }
+    .nav-link:hover {
+        color: var(--color-accent-cyan);
+    }
+    .nav-link:hover::after {
+        width: 100%;
+    }
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+    }
+
+    /* Mobile toggle */
+    .mobile-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+    }
+    .mobile-toggle span {
+        width: 22px;
+        height: 2px;
+        background: var(--color-text-primary);
+        transition: all var(--transition-fast);
+        border-radius: 1px;
+    }
+    .mobile-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .mobile-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (min-width: 768px) {
+        .nav-links {
+            display: flex;
+        }
+        .mobile-toggle {
+            display: none;
+        }
+    }
+
+    /* Mobile nav */
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: var(--space-lg);
+        background: var(--color-bg-secondary);
+        border-bottom: 1px solid var(--color-border);
+        animation: slideDown 0.3s ease;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding-top: 5rem;
+    }
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+    .hero-gradient {
+        position: absolute;
+        inset: 0;
+        background: var(--gradient-hero);
+    }
+    .hero-grid-pattern {
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(83, 130, 161, 0.05) 1px, transparent 1px),
+            linear-gradient(
+                90deg,
+                rgba(83, 130, 161, 0.05) 1px,
+                transparent 1px
+            );
+        background-size: 60px 60px;
+    }
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+        align-items: center;
+        padding: var(--space-2xl) 0;
+    }
+    .hero-greeting {
+        font-family: var(--font-mono);
+        color: var(--color-accent-cyan);
+        font-size: 1rem;
+        margin-bottom: var(--space-sm);
+    }
+    .hero-name {
+        font-size: clamp(2.5rem, 7vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: var(--space-sm);
+        background: linear-gradient(
+            135deg,
+            var(--color-text-primary) 0%,
+            var(--color-accent-blue) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .hero-role {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        margin-bottom: var(--space-xl);
+    }
+    .hero-actions {
+        display: flex;
+        gap: var(--space-md);
+        flex-wrap: wrap;
+    }
+
+    @media (min-width: 1024px) {
+        .hero-content {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    /* ── Section Alt ── */
+    .section-alt {
+        background: var(--color-bg-secondary);
+    }
+
+    /* ── Contact ── */
+    .contact-container {
+        text-align: center;
+    }
+    .contact-message {
+        font-size: 1.2rem;
+        color: var(--color-text-secondary);
+        margin-bottom: var(--space-2xl);
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        max-width: 800px;
+        margin: 0 auto var(--space-2xl);
+    }
+    .contact-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-xs);
+        padding: var(--space-lg);
+        border-radius: var(--radius-lg);
+        text-decoration: none;
+        color: var(--color-text-primary);
+        transition:
+            transform var(--transition-base),
+            box-shadow var(--transition-base);
+    }
+    .contact-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-glow);
+        color: var(--color-text-primary);
+    }
+    .contact-icon {
+        font-size: 1.5rem;
+    }
+    .contact-label {
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .contact-value {
+        font-size: 0.95rem;
+        color: var(--color-accent-cyan);
+    }
+    .contact-cta {
+        margin-top: var(--space-lg);
+    }
+
+    @media (min-width: 640px) {
+        .contact-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>
