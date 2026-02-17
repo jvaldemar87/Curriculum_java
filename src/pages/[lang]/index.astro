@@ -60,11 +60,13 @@ const base = import.meta.env.BASE_URL || "/Curriculum_java";
 
 const email = "Jvaldemar.trabajo@gmail.com";
 const phone = "+52 56 4842 3567";
+const linkedin = "@jvaldemar87";
 const subject = encodeURIComponent(t.contact.mailto.subject);
 const body = encodeURIComponent(t.contact.mailto.body);
 const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
 const whatsappMessage = encodeURIComponent(t.contact.whatsapp.message);
 const whatsappLink = `https://wa.me/525648423567?text=${whatsappMessage}`;
+const linkedinLink = `https://www.linkedin.com/in/jvaldemar87/`;
 ---
 
 <MainLayout lang={lang}>
@@ -193,6 +195,16 @@ const whatsappLink = `https://wa.me/525648423567?text=${whatsappMessage}`;
                     <span class="contact-label">{t.contact.location}</span>
                     <span class="contact-value">Guadalajara, Jalisco, MX</span>
                 </div>
+                <a
+                    href={linkedinLink}
+                    class="contact-card glass"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="contact-icon">🌐</span>
+                    <span class="contact-label">{t.contact.linkedin}</span>
+                    <span class="contact-value">{linkedin}</span>
+                </a>
             </div>
             <div class="contact-cta reveal">
                 <a href={mailtoLink} class="btn btn-primary">{t.contact.cta}</a>
@@ -485,7 +497,7 @@ const whatsappLink = `https://wa.me/525648423567?text=${whatsappMessage}`;
 
     @media (min-width: 640px) {
         .contact-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 </style>

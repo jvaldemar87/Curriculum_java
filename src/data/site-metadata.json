@@ -74,6 +74,7 @@
                 "email": "Email",
                 "phone": "Phone",
                 "location": "Location",
+                "linkedin": "Linkedin",
                 "message": "Let's build something great together.",
                 "cta": "Send Email",
                 "mailto": {
@@ -118,6 +119,7 @@
                 "email": "Correo",
                 "phone": "Teléfono",
                 "location": "Ubicación",
+                "linkedin": "Linkedin",
                 "message": "Construyamos algo grandioso juntos.",
                 "cta": "Enviar Correo",
                 "mailto": {
@@ -162,6 +164,7 @@
                 "email": "E-mail",
                 "phone": "Téléphone",
                 "location": "Localisation",
+                "linkedin": "Linkedin",
                 "message": "Construisons quelque chose de formidable ensemble.",
                 "cta": "Envoyer E-mail",
                 "mailto": {
