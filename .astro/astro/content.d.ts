@@ -335,6 +335,92 @@ declare module 'astro:content' {
   data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 };
+"terminal": {
+"contact.en.md": {
+	id: "contact.en.md";
+  slug: "contacten";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"contact.es.md": {
+	id: "contact.es.md";
+  slug: "contactes";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"contact.fr.md": {
+	id: "contact.fr.md";
+  slug: "contactfr";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"help.en.md": {
+	id: "help.en.md";
+  slug: "helpen";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"help.es.md": {
+	id: "help.es.md";
+  slug: "helpes";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"help.fr.md": {
+	id: "help.fr.md";
+  slug: "helpfr";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"stack.en.md": {
+	id: "stack.en.md";
+  slug: "stacken";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"stack.es.md": {
+	id: "stack.es.md";
+  slug: "stackes";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"stack.fr.md": {
+	id: "stack.fr.md";
+  slug: "stackfr";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"whoami.en.md": {
+	id: "whoami.en.md";
+  slug: "whoamien";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"whoami.es.md": {
+	id: "whoami.es.md";
+  slug: "whoamies";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+"whoami.fr.md": {
+	id: "whoami.fr.md";
+  slug: "whoamifr";
+  body: string;
+  collection: "terminal";
+  data: InferEntrySchema<"terminal">
+} & { render(): Render[".md"] };
+};
 
 	};
 

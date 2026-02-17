@@ -75,7 +75,14 @@
                 "phone": "Phone",
                 "location": "Location",
                 "message": "Let's build something great together.",
-                "cta": "Send Email"
+                "cta": "Send Email",
+                "mailto": {
+                    "subject": "Contact from Portfolio",
+                    "body": "Hi Jesús, I visited your portfolio and I would like to..."
+                },
+                "whatsapp": {
+                    "message": "Hi Jesús, I saw your portfolio and I'm interested in..."
+                }
             },
             "footer": {
                 "rights": "All rights reserved.",
@@ -112,7 +119,14 @@
                 "phone": "Teléfono",
                 "location": "Ubicación",
                 "message": "Construyamos algo grandioso juntos.",
-                "cta": "Enviar Correo"
+                "cta": "Enviar Correo",
+                "mailto": {
+                    "subject": "Contacto desde Portafolio",
+                    "body": "Hola Jesús, visité tu portafolio y me gustaría..."
+                },
+                "whatsapp": {
+                    "message": "Hola Jesús, vi tu portafolio y me interesa..."
+                }
             },
             "footer": {
                 "rights": "Todos los derechos reservados.",
@@ -149,7 +163,14 @@
                 "phone": "Téléphone",
                 "location": "Localisation",
                 "message": "Construisons quelque chose de formidable ensemble.",
-                "cta": "Envoyer E-mail"
+                "cta": "Envoyer E-mail",
+                "mailto": {
+                    "subject": "Contact depuis Portfolio",
+                    "body": "Bonjour Jesús, j'ai visité votre portfolio et je voudrais..."
+                },
+                "whatsapp": {
+                    "message": "Bonjour Jesús, j'ai vu votre portfolio et je suis intéressé par..."
+                }
             },
             "footer": {
                 "rights": "Tous droits réservés.",

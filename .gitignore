@@ -1,1 +1,7 @@
 node_modules
+
+# Astro generated
+.astro/
+dist/
+.env
+.DS_Store

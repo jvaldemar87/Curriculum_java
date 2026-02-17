@@ -35,8 +35,17 @@ const bioCollection = defineCollection({
     }),
 });
 
+const terminalCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        command: z.string(),
+        lang: z.enum(['en', 'es', 'fr']),
+    }),
+});
+
 export const collections = {
     experience: experienceCollection,
     projects: projectsCollection,
     bio: bioCollection,
+    terminal: terminalCollection,
 };

@@ -4,10 +4,10 @@ import { useTranslations } from "@/utils/i18n";
 
 interface Props {
     lang: Lang;
-    bioContent: string;
+    terminalData: Record<string, string>;
 }
 
-const { lang, bioContent } = Astro.props;
+const { lang, terminalData } = Astro.props;
 const t = useTranslations(lang);
 ---
 
@@ -26,7 +26,7 @@ const t = useTranslations(lang);
             <span class="typed-text" id="auto-typed">whoami</span>
         </div>
         <div class="terminal-response" id="initial-response">
-            <pre set:html={bioContent} />
+            <div set:html={terminalData["whoami"] || ""} />
         </div>
     </div>
     <div class="terminal-input-row">
@@ -42,42 +42,27 @@ const t = useTranslations(lang);
     </div>
 </div>
 
-<script define:vars={{ lang, helpText: t.terminal.help_text }}>
+<script is:inline define:vars={{ lang, terminalData }}>
     function initTerminal() {
         const input = document.getElementById("terminal-input");
         const output = document.getElementById("terminal-output");
         if (!input || !output) return;
 
-        const commands = {
-            help: () => helpText,
-            whoami: () =>
-                document.getElementById("initial-response")?.innerHTML || "",
-            skills: () => `<pre style="color: var(--color-accent-cyan)">
-TECHNICAL_SKILLS:
-  ├── Languages ───── Java 21 | Python | SQL
-  ├── Frameworks ──── Spring Boot | FastAPI | Spring Cloud
-  ├── Messaging ───── Apache Kafka | Spring Cloud Stream
-  ├── Databases ───── Oracle 11g | MongoDB | SQL Server
-  ├── DevOps ──────── CI/CD | Docker | Linux | Git
-  ├── Security ────── SonarQube | Checkmarx
-  └── Management ──── Jira | ServiceNow | ITIL | Scrum
-</pre>`,
-            experience: () => `<pre style="color: var(--color-accent-green)">
-CAREER_PATH:
-  ┌─ 2024.12 → Present ─── Stefanini Mexico (Senior Java Dev)
-  ├─ 2024.01 → 2024.11 ─── NTT Data Mexico (Senior Java Dev)
-  ├─ 2023.08 → 2024.01 ─── INE (Java & SQL Developer)
-  └─ 2021.03 → 2023.03 ─── Grupo Salinas (Software Developer)
-</pre>`,
-            contact: () => `<pre style="color: var(--color-accent-purple)">
-CONTACT_INFO:
-  ├── Email ────── valdemar.benitez@outlook.com
-  ├── Phone ───── +52 55 5011 8928
-  ├── Location ── Mexico City, MX
-  └── LinkedIn ── linkedin.com/in/jesus-valdemar
-</pre>`,
+        const baseCommands = {
             clear: () => "__CLEAR__",
         };
+
+        const commands = { ...baseCommands };
+
+        // Inject dynamic commands from markdown files
+        Object.keys(terminalData).forEach((cmd) => {
+            commands[cmd] = () => terminalData[cmd];
+        });
+
+        // Ensure whoami is present if not already added via markdown
+        if (!commands["whoami"]) {
+            commands["whoami"] = () => "";
+        }
 
         input.addEventListener("keydown", (e) => {
             if (e.key !== "Enter") return;
@@ -222,6 +207,33 @@ CONTACT_INFO:
         font-size: 0.8rem;
         white-space: pre-wrap;
         word-break: break-word;
+        margin: 0;
+    }
+    .terminal-response :global(ul) {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .terminal-response :global(li) {
+        margin-bottom: 0.5rem;
+        display: flex;
+        gap: 0.5rem;
+    }
+    .terminal-response :global(li)::before {
+        content: "➜";
+        color: var(--color-accent-blue);
+        flex-shrink: 0;
+    }
+    .terminal-response :global(p) {
+        margin: 0 0 0.5rem 0;
+    }
+    .terminal-response :global(strong) {
+        color: var(--color-accent-cyan);
+    }
+    .terminal-response :global(em) {
+        color: var(--color-text-muted);
+        font-style: italic;
+        font-size: 0.75rem;
     }
     .terminal-error {
         color: var(--color-accent-orange);

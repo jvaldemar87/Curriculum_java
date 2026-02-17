@@ -20,7 +20,9 @@ export function getStaticPaths() {
 const { lang } = Astro.params as { lang: Lang };
 const t = useTranslations(lang);
 
-// Fetch content collections filtered by language
+import { marked } from "marked";
+
+// Fetch content collections filters by language
 const allExperience = await getCollection("experience");
 const experience = allExperience
     .filter((e) => e.data.lang === lang)
@@ -31,8 +33,13 @@ const projects = allProjects
     .filter((p) => p.data.lang === lang)
     .sort((a, b) => a.data.order - b.data.order);
 
-const allBio = await getCollection("bio");
-const bio = allBio.find((b) => b.data.lang === lang);
+const allTerminal = await getCollection("terminal");
+const terminalEntries = allTerminal.filter((t) => t.data.lang === lang);
+
+const terminalData: Record<string, string> = {};
+for (const entry of terminalEntries) {
+    terminalData[entry.data.command] = await marked.parse(entry.body);
+}
 
 // Render content
 const renderedExperience = await Promise.all(
@@ -49,14 +56,15 @@ const renderedProjects = await Promise.all(
     }),
 );
 
-let bioHtml = "";
-if (bio) {
-    const { Content } = await bio.render();
-    // We'll get the raw body for terminal
-    bioHtml = bio.body || "";
-}
-
 const base = import.meta.env.BASE_URL || "/Curriculum_java";
+
+const email = "Jvaldemar.trabajo@gmail.com";
+const phone = "+52 56 4842 3567";
+const subject = encodeURIComponent(t.contact.mailto.subject);
+const body = encodeURIComponent(t.contact.mailto.body);
+const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+const whatsappMessage = encodeURIComponent(t.contact.whatsapp.message);
+const whatsappLink = `https://wa.me/525648423567?text=${whatsappMessage}`;
 ---
 
 <MainLayout lang={lang}>
@@ -110,7 +118,7 @@ const base = import.meta.env.BASE_URL || "/Curriculum_java";
                 </div>
             </div>
             <div class="hero-terminal">
-                <Terminal lang={lang} bioContent={bioHtml} />
+                <Terminal lang={lang} terminalData={terminalData} />
             </div>
         </div>
     </section>
@@ -172,32 +180,29 @@ const base = import.meta.env.BASE_URL || "/Curriculum_java";
             <h2 class="section-title reveal">{t.sections.contact}</h2>
             <p class="contact-message reveal">{t.contact.message}</p>
             <div class="contact-grid reveal">
-                <a
-                    href="mailto:valdemar.benitez@outlook.com"
-                    class="contact-card glass"
-                >
+                <a href={mailtoLink} class="contact-card glass">
                     <span class="contact-icon">✉️</span>
                     <span class="contact-label">{t.contact.email}</span>
-                    <span class="contact-value"
-                        >valdemar.benitez@outlook.com</span
-                    >
+                    <span class="contact-value">{email}</span>
                 </a>
-                <a href="tel:+525550118928" class="contact-card glass">
+                <a
+                    href={whatsappLink}
+                    class="contact-card glass"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <span class="contact-icon">📱</span>
                     <span class="contact-label">{t.contact.phone}</span>
-                    <span class="contact-value">+52 55 5011 8928</span>
+                    <span class="contact-value">{phone}</span>
                 </a>
                 <div class="contact-card glass">
                     <span class="contact-icon">📍</span>
                     <span class="contact-label">{t.contact.location}</span>
-                    <span class="contact-value">Mexico City, MX</span>
+                    <span class="contact-value">Guadalajara, Jalisco, MX</span>
                 </div>
             </div>
             <div class="contact-cta reveal">
-                <a
-                    href="mailto:valdemar.benitez@outlook.com"
-                    class="btn btn-primary">{t.contact.cta}</a
-                >
+                <a href={mailtoLink} class="btn btn-primary">{t.contact.cta}</a>
             </div>
         </div>
     </section>
