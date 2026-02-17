@@ -5,7 +5,7 @@ import BentoContainer from "@/components/bento/BentoContainer.astro";
 import BentoItem from "@/components/bento/BentoItem.astro";
 import LanguageSelector from "@/components/i18n/LanguageSelector.astro";
 import ExperienceCard from "@/components/ui/ExperienceCard.astro";
-import CommitGraph from "@/components/ui/CommitGraph.astro";
+
 import { getCollection } from "astro:content";
 import { useTranslations, getLocalizedPath, type Lang } from "@/utils/i18n";
 
@@ -120,13 +120,6 @@ const whatsappLink = `https://wa.me/525648423567?text=${whatsappMessage}`;
             <div class="hero-terminal">
                 <Terminal lang={lang} terminalData={terminalData} />
             </div>
-        </div>
-    </section>
-
-    <!-- Commit Activity -->
-    <section class="section" id="activity">
-        <div class="container">
-            <CommitGraph />
         </div>
     </section>
 
