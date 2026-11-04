@@ -3,6 +3,7 @@ title: "DevOps Engineer / Java Developer"
 company: "Tata Consultancy Services"
 startDate: "2026-01-01"
 endDate: "Present"
+location: "Remote"
 tags: ["Docker", "Kubernetes", "Terraform", "AWS IAM", "CI/CD", "Java", "Spring Boot"]
 lang: "en"
 order: 1

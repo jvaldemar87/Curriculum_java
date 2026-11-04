@@ -3,6 +3,7 @@ title: "Développeur Backend Java"
 company: "NTT Data Mexique"
 startDate: "2024-01-01"
 endDate: "2024-11-01"
+location: "à distance"
 tags: ["Java", "Spring Boot", "CI/CD", "GCP", "Oracle 11g", "ITIL", "ServiceNow"]
 lang: "fr"
 order: 3

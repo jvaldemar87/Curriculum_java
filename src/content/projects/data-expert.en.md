@@ -5,7 +5,7 @@ icon: "database"
 gridSize: "medium"
 tags: ["Oracle 11g", "SQL Optimization", "Stored Procedures", "DBA Standards"]
 lang: "en"
-order: 2
+order: 4
 ---
 
 ## Data & SQL Performance

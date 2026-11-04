@@ -2,10 +2,10 @@
 title: "DevOps & DevSecOps"
 description: "Pipelines CI/CD, Infrastructure as Code et analyse de sécurité pour une livraison logicielle fiable."
 icon: "devops"
-gridSize: "medium"
+gridSize: "large"
 tags: ["CI/CD", "Terraform", "Docker", "Kubernetes", "AWS IAM", "SonarQube"]
 lang: "fr"
-order: 3
+order: 1
 ---
 
 ## Automatisation, Cloud & Sécurité

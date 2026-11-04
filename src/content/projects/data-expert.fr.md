@@ -5,7 +5,7 @@ icon: "database"
 gridSize: "medium"
 tags: ["Oracle 11g", "Optimisation SQL", "Procédures stockées", "Standards DBA"]
 lang: "fr"
-order: 2
+order: 4
 ---
 
 ## Données & Performance SQL

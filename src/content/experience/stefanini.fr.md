@@ -3,6 +3,7 @@ title: "Développeur de Microservices Java & Support DevOps"
 company: "Stefanini Mexique"
 startDate: "2024-12-01"
 endDate: "2025-12-01"
+location: "à distance"
 tags: ["Java", "Spring Boot", "Clean Architecture", "SonarQube", "AWS", "Jira", "Swagger / UML"]
 lang: "fr"
 order: 2

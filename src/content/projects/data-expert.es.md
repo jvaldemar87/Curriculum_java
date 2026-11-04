@@ -5,7 +5,7 @@ icon: "database"
 gridSize: "medium"
 tags: ["Oracle 11g", "Optimización SQL", "Procedimientos Almacenados", "Estándares DBA"]
 lang: "es"
-order: 2
+order: 4
 ---
 
 ## Datos & Rendimiento SQL

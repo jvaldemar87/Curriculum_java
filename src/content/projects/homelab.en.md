@@ -2,10 +2,10 @@
 title: "Homelab & Self-Hosted Infrastructure"
 description: "On-premises virtualization and a distributed K3s cluster to emulate production architectures."
 icon: "devops"
-gridSize: "medium"
+gridSize: "large"
 tags: ["Proxmox VE", "K3s", "Raspberry Pi", "Cloudflare Tunnels", "Zero Trust", "GitOps"]
 lang: "en"
-order: 4
+order: 3
 ---
 
 ## Proxmox, K3s & Zero Trust

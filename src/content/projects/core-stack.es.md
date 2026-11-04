@@ -5,7 +5,7 @@ icon: "java"
 gridSize: "large"
 tags: ["Java 8-17", "Spring Boot", "Spring Data JPA", "Maven", "Arquitectura Limpia", "REST API"]
 lang: "es"
-order: 1
+order: 2
 ---
 
 ## Microservicios Java & Spring Boot

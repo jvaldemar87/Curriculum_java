@@ -164,6 +164,48 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "experience": {
+"grupo-salinas.en.md": {
+	id: "grupo-salinas.en.md";
+  slug: "grupo-salinasen";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"grupo-salinas.es.md": {
+	id: "grupo-salinas.es.md";
+  slug: "grupo-salinases";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"grupo-salinas.fr.md": {
+	id: "grupo-salinas.fr.md";
+  slug: "grupo-salinasfr";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"ine.en.md": {
+	id: "ine.en.md";
+  slug: "ineen";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"ine.es.md": {
+	id: "ine.es.md";
+  slug: "inees";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"ine.fr.md": {
+	id: "ine.fr.md";
+  slug: "inefr";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
 "ntt-data.en.md": {
 	id: "ntt-data.en.md";
   slug: "ntt-dataen";
