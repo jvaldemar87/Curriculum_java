@@ -1,5 +1,4 @@
 ---
-// Root index — redirects to default locale
-const base = import.meta.env.BASE_URL || "/Curriculum_java";
-return Astro.redirect(`${base}/es/`);
+import HomePage from "@/components/home/HomePage.astro";
 ---
+<HomePage lang="es" />

@@ -27,6 +27,13 @@ export function getSeoData(lang: Lang) {
 }
 
 export function getLocalizedPath(lang: Lang, path: string = '') {
-    const base = import.meta.env.BASE_URL || '/Curriculum_java';
+    const baseEnv = import.meta.env.BASE_URL;
+    const base = baseEnv === '/' ? '' : baseEnv || '';
+
+    // If default lang (es), return root path
+    if (lang === defaultLang) {
+        return `${base}${path ? '/' + path : '/'}`;
+    }
+
     return `${base}/${lang}${path ? '/' + path : ''}/`;
 }

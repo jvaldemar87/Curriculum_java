@@ -1,5 +1,5 @@
 ---
-import { getSeoData, type Lang } from '@/utils/i18n';
+import { getSeoData, getLocalizedPath, type Lang } from '@/utils/i18n';
 import '@/styles/global.css';
 
 interface Props {
@@ -12,7 +12,9 @@ const { lang, title, description } = Astro.props;
 const seo = getSeoData(lang);
 const pageTitle = title || seo.title;
 const pageDesc = description || seo.description;
-const base = import.meta.env.BASE_URL || '/Curriculum_java';
+const baseEnv = import.meta.env.BASE_URL;
+const base = baseEnv === '/' ? '' : baseEnv || '';
+const canonicalUrl = getLocalizedPath(lang);
 ---
 
 <!doctype html>
@@ -36,10 +38,10 @@ const base = import.meta.env.BASE_URL || '/Curriculum_java';
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <!-- Canonical -->
-    <link rel="canonical" href={`${base}/${lang}/`} />
-    <link rel="alternate" hreflang="en" href={`${base}/en/`} />
-    <link rel="alternate" hreflang="es" href={`${base}/es/`} />
-    <link rel="alternate" hreflang="fr" href={`${base}/fr/`} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={getLocalizedPath('en')} />
+    <link rel="alternate" hreflang="es" href={getLocalizedPath('es')} />
+    <link rel="alternate" hreflang="fr" href={getLocalizedPath('fr')} />
     <title>{pageTitle}</title>
   </head>
   <body>
