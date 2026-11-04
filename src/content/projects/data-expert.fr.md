@@ -1,18 +1,17 @@
 ---
-title: "Expert en Données"
-description: "Optimisation avancée de bases de données avec Oracle 11g, MongoDB et tuning SQL pour des systèmes critiques."
+title: "Optimisation des Bases de Données"
+description: "Optimisation SQL et des procédures stockées sur Oracle 11g pour des systèmes à haute disponibilité."
 icon: "database"
 gridSize: "medium"
-tags: ["Oracle 11g", "MongoDB", "Optimisation SQL", "Procédures Stockées", "NoSQL"]
+tags: ["Oracle 11g", "Optimisation SQL", "Procédures stockées", "Standards DBA"]
 lang: "fr"
-order: 2
+order: 4
 ---
 
-## Maîtrise des Bases de Données
+## Données & Performance SQL
 
-Gestion experte des bases de données couvrant les paradigmes relationnels et NoSQL:
+Ajustement des charges de bases de données pour des systèmes bancaires critiques :
 
-- **Oracle 11g** optimisation des procédures stockées aux normes DBA
-- **MongoDB** pour le stockage de données non structurées à haut débit
-- **SQL Tuning** réduisant significativement le temps d'exécution des requêtes
-- Conception de migration de données et pipelines ETL
+- Optimisation de **procédures stockées** et de requêtes SQL complexes sur **Oracle 11g**
+- Réglage des performances conforme aux **standards DBA**
+- Accès aux données fiable et à haute disponibilité pour les microservices

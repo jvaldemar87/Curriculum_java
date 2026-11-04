@@ -4,7 +4,7 @@ lang: "es"
 ---
 
 - **Nombre:** Jesús Valdemar Benítez Castañeda
-- **Rol:** Desarrollador Java Senior (Microservicios)
-- **Ubicación:** Guadalajara, Jalisco, MX (Remoto)
-- **Misión:** Construir arquitecturas backend escalables, seguras y de alto rendimiento.
-- **Estado:** Disponible para nuevos retos en ecosistemas Java 21 / Spring Boot.
+- **Rol:** Ingeniero DevOps & Desarrollador Java
+- **Ubicación:** Jalisco, MX (Remoto)
+- **Misión:** Automatizar infraestructura y entregar software confiable, seguro y escalable.
+- **Estado:** Disponible para nuevos retos en DevOps, Cloud y ecosistemas Java / Spring Boot.

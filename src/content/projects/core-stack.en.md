@@ -1,18 +1,18 @@
 ---
-title: "Core Stack"
-description: "Enterprise-grade backend development with Java 21, Spring Boot, and Microservices architecture following Clean Architecture patterns."
+title: "Java & Spring Boot"
+description: "REST APIs and microservices with Java 8-17, Spring Boot, and Clean Architecture."
 icon: "java"
 gridSize: "large"
-tags: ["Java 21", "Spring Boot", "Microservices", "Clean Architecture", "REST API", "Lombok"]
+tags: ["Java 8-17", "Spring Boot", "Spring Data JPA", "Maven", "Clean Architecture", "REST API"]
 lang: "en"
-order: 1
+order: 2
 ---
 
-## Java 21 & Spring Boot Microservices
+## Java & Spring Boot Microservices
 
-Building scalable, resilient backend systems using the latest Java features and Spring ecosystem:
+Designing and maintaining RESTful APIs with the Spring ecosystem:
 
-- **Clean Architecture** (Hexagonal): Model → Repository → Service separation
-- **Spring Cloud Stream** for event-driven microservice communication
-- **API Documentation** with Swagger/OpenAPI 3.0
-- **30% faster response times** through architectural refactoring
+- **Clean Architecture** (Model-Repository-Service): refactored legacy endpoints, reducing response time by **30%**
+- **RESTful APIs** with Spring Boot, Spring Data JPA, and MVC
+- **L3 support** and incident management with Jira
+- Technical documentation with **Swagger** and **UML**

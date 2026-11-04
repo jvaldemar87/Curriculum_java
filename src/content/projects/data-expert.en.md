@@ -1,18 +1,17 @@
 ---
-title: "Data Expert"
-description: "Advanced database optimization with Oracle 11g, MongoDB, and SQL performance tuning for mission-critical systems."
+title: "Database Optimization"
+description: "SQL and stored procedure optimization on Oracle 11g for high-availability systems."
 icon: "database"
 gridSize: "medium"
-tags: ["Oracle 11g", "MongoDB", "SQL Optimization", "Stored Procedures", "NoSQL"]
+tags: ["Oracle 11g", "SQL Optimization", "Stored Procedures", "DBA Standards"]
 lang: "en"
-order: 2
+order: 4
 ---
 
-## Database & Data Layer Mastery
+## Data & SQL Performance
 
-Expert-level database management spanning relational and NoSQL paradigms:
+Tuning database workloads for critical banking systems:
 
-- **Oracle 11g** stored procedure optimization meeting DBA standards
-- **MongoDB** for high-throughput unstructured data storage
-- **SQL Tuning** reducing query execution time significantly
-- Data migration and ETL pipeline design
+- **Oracle 11g** stored procedure and complex SQL optimization
+- Performance tuning that meets **DBA standards**
+- Reliable, high-availability data access for microservices

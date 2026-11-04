@@ -1,12 +1,12 @@
 ---
-title: "Desarrollador de Software"
+title: "Desarrollador Java"
 company: "Grupo Salinas S.A. de C.V."
 startDate: "2021-03-01"
 endDate: "2023-03-01"
 location: "Ciudad de México"
 tags: ["Java", "Spring Boot", "Linux", "Checkmarx", "MongoDB"]
 lang: "es"
-order: 4
+order: 5
 ---
 
 - Mantenimiento del código del sistema fiscal y desarrollo de aplicaciones para el **cálculo de impuestos corporativos**.

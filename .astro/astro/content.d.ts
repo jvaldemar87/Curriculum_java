@@ -248,6 +248,27 @@ declare module 'astro:content' {
   collection: "experience";
   data: InferEntrySchema<"experience">
 } & { render(): Render[".md"] };
+"tata-consultancy.en.md": {
+	id: "tata-consultancy.en.md";
+  slug: "tata-consultancyen";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"tata-consultancy.es.md": {
+	id: "tata-consultancy.es.md";
+  slug: "tata-consultancyes";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"tata-consultancy.fr.md": {
+	id: "tata-consultancy.fr.md";
+  slug: "tata-consultancyfr";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
 };
 "projects": {
 "core-stack.en.md": {
@@ -309,6 +330,27 @@ declare module 'astro:content' {
 "devops-quality.fr.md": {
 	id: "devops-quality.fr.md";
   slug: "devops-qualityfr";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"homelab.en.md": {
+	id: "homelab.en.md";
+  slug: "homelaben";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"homelab.es.md": {
+	id: "homelab.es.md";
+  slug: "homelabes";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"homelab.fr.md": {
+	id: "homelab.fr.md";
+  slug: "homelabfr";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">

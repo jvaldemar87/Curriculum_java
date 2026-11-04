@@ -6,7 +6,7 @@ endDate: "2024-01-01"
 location: "Ciudad de México"
 tags: ["Java", "Oracle 11g", "Checkmarx", "SQL Optimization"]
 lang: "es"
-order: 3
+order: 4
 ---
 
 - Desarrollo de consultas SQL especializadas para **optimizar el rendimiento** de paquetes de procedimientos almacenados en Oracle 11g.

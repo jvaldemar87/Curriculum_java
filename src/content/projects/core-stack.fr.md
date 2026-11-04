@@ -1,18 +1,18 @@
 ---
-title: "Stack Principal"
-description: "Développement backend d'entreprise avec Java 21, Spring Boot et architecture Microservices suivant les patterns d'Architecture Propre."
+title: "Java & Spring Boot"
+description: "API REST et microservices avec Java 8-17, Spring Boot et Architecture Propre."
 icon: "java"
 gridSize: "large"
-tags: ["Java 21", "Spring Boot", "Microservices", "Architecture Propre", "REST API", "Lombok"]
+tags: ["Java 8-17", "Spring Boot", "Spring Data JPA", "Maven", "Architecture Propre", "REST API"]
 lang: "fr"
-order: 1
+order: 2
 ---
 
-## Java 21 & Microservices Spring Boot
+## Microservices Java & Spring Boot
 
-Construction de systèmes backend scalables et résilients utilisant les dernières fonctionnalités Java et l'écosystème Spring:
+Conception et maintenance d'API REST avec l'écosystème Spring :
 
-- **Architecture Propre** (Hexagonale): Séparation Model → Repository → Service
-- **Spring Cloud Stream** pour la communication event-driven
-- **Documentation API** avec Swagger/OpenAPI 3.0
-- **30% plus rapide** grâce à la refactorisation architecturale
+- **Architecture Propre** (Model-Repository-Service) : refactorisation d'endpoints legacy, réduisant le temps de réponse de **30 %**
+- **API RESTful** avec Spring Boot, Spring Data JPA et MVC
+- **Support L3** et gestion des incidents avec Jira
+- Documentation technique avec **Swagger** et **UML**

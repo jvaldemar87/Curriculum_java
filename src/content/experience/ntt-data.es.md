@@ -1,15 +1,15 @@
 ---
-title: "Desarrollador Java Senior"
+title: "Desarrollador Backend Java"
 company: "NTT Data México"
 startDate: "2024-01-01"
 endDate: "2024-11-01"
-location: "Ciudad de México"
-tags: ["Spring Boot", "Oracle 11g", "CI/CD", "ITIL", "ServiceNow"]
+location: "Remoto"
+tags: ["Java", "Spring Boot", "CI/CD", "GCP", "Oracle 11g", "ITIL", "ServiceNow"]
 lang: "es"
-order: 2
+order: 3
 ---
 
-- Desarrollé y brindé soporte Nivel 3 a microservicios para el **sistema nacional de registro de cuentas bancarias**, asegurando una alta disponibilidad.
-- Implementé prácticas de **Integración Continua (CI/CD)** para agilizar el despliegue de microservicios y mejorar la calidad del código.
-- Realicé optimización avanzada de consultas SQL en **Oracle 11g**, ajustando procedimientos almacenados para cumplir con los estándares de rendimiento del DBA.
-- Gestioné incidencias y cambios críticos siguiendo las mejores prácticas de **ITIL** y utilizando herramientas como ServiceNow y Jira.
+- Participé en la definición e implementación de prácticas de **integración continua (CI/CD)** para agilizar los pases a producción de microservicios bancarios.
+- Adquirí experiencia en la **nube pública** colaborando en tareas operativas y de despliegue sobre **Google Cloud Platform (GCP)**.
+- Aseguré el rendimiento de bases de datos ajustando y optimizando procedimientos almacenados y consultas SQL complejas en **Oracle 11g**.
+- Gestioné el ciclo de vida de incidentes y cambios aplicando las mejores prácticas de **ITIL** a través de ServiceNow y Jira.
