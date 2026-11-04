@@ -5,43 +5,52 @@
     },
     "seo": {
         "en": {
-            "title": "Jesús Valdemar — Senior Java Microservices Developer",
-            "description": "Portfolio of Jesús Valdemar Benítez Castañeda, a Senior Java Developer specializing in Microservices, Spring Boot, Apache Kafka, and Oracle SQL Optimization. Backend Specialist with 4+ years of experience building scalable enterprise systems.",
+            "title": "Jesús Valdemar — DevOps Engineer & Java Developer",
+            "description": "Portfolio of Jesús Valdemar Benítez Castañeda, DevOps Engineer and Java Developer specializing in CI/CD pipelines, Docker, Kubernetes/K3s, Terraform and cloud infrastructure (AWS, GCP). Java and Spring Boot backend background with DevSecOps practices.",
             "keywords": [
-                "Java Microservices Developer",
-                "Backend Specialist",
-                "Spring Boot Expert",
-                "Oracle SQL Optimization Specialist",
-                "Senior Java Developer",
-                "Clean Architecture",
-                "Apache Kafka Developer",
-                "Mexico Software Engineer"
+                "DevOps Engineer",
+                "Java Developer",
+                "CI/CD",
+                "Kubernetes",
+                "Terraform",
+                "Docker",
+                "AWS",
+                "Spring Boot",
+                "Infrastructure as Code",
+                "DevSecOps",
+                "Mexico DevOps Engineer"
             ]
         },
         "es": {
-            "title": "Jesús Valdemar — Desarrollador Senior de Microservicios Java",
-            "description": "Portafolio de Jesús Valdemar Benítez Castañeda, Desarrollador Senior Java especializado en Microservicios, Spring Boot, Apache Kafka y Optimización SQL en Oracle. Especialista Backend con 4+ años de experiencia construyendo sistemas empresariales escalables.",
+            "title": "Jesús Valdemar — Ingeniero DevOps & Desarrollador Java",
+            "description": "Portafolio de Jesús Valdemar Benítez Castañeda, Ingeniero DevOps y Desarrollador Java especializado en pipelines CI/CD, Docker, Kubernetes/K3s, Terraform e infraestructura cloud (AWS, GCP). Background backend en Java y Spring Boot con prácticas DevSecOps.",
             "keywords": [
-                "Desarrollador Java Microservicios",
-                "Especialista Backend",
-                "Experto Spring Boot",
-                "Especialista Optimización SQL Oracle",
-                "Desarrollador Java Senior",
-                "Arquitectura Limpia",
-                "Desarrollador Apache Kafka"
+                "Ingeniero DevOps",
+                "Desarrollador Java",
+                "CI/CD",
+                "Kubernetes",
+                "Terraform",
+                "Docker",
+                "AWS",
+                "Spring Boot",
+                "Infraestructura como Código",
+                "DevSecOps"
             ]
         },
         "fr": {
-            "title": "Jesús Valdemar — Développeur Senior Microservices Java",
-            "description": "Portfolio de Jesús Valdemar Benítez Castañeda, Développeur Senior Java spécialisé en Microservices, Spring Boot, Apache Kafka et Optimisation SQL Oracle. Spécialiste Backend avec 4+ ans d'expérience dans la construction de systèmes d'entreprise scalables.",
+            "title": "Jesús Valdemar — Ingénieur DevOps & Développeur Java",
+            "description": "Portfolio de Jesús Valdemar Benítez Castañeda, Ingénieur DevOps et Développeur Java spécialisé dans les pipelines CI/CD, Docker, Kubernetes/K3s, Terraform et l'infrastructure cloud (AWS, GCP). Background backend Java et Spring Boot avec des pratiques DevSecOps.",
             "keywords": [
-                "Développeur Java Microservices",
-                "Spécialiste Backend",
-                "Expert Spring Boot",
-                "Spécialiste Optimisation SQL Oracle",
-                "Développeur Java Senior",
-                "Architecture Propre",
-                "Développeur Apache Kafka"
+                "Ingénieur DevOps",
+                "Développeur Java",
+                "CI/CD",
+                "Kubernetes",
+                "Terraform",
+                "Docker",
+                "AWS",
+                "Spring Boot",
+                "Infrastructure as Code",
+                "DevSecOps"
             ]
         }
     },
@@ -56,7 +65,7 @@
             },
             "hero": {
                 "greeting": "Hello, I'm",
-                "role": "Senior Java Microservices Developer",
+                "role": "DevOps Engineer & Java Developer",
                 "cta": "View My Work",
                 "download_cv": "Download CV"
             },
@@ -101,7 +110,7 @@
             },
             "hero": {
                 "greeting": "Hola, soy",
-                "role": "Desarrollador Senior de Microservicios Java",
+                "role": "Ingeniero DevOps & Desarrollador Java",
                 "cta": "Ver Mi Trabajo",
                 "download_cv": "Descargar CV"
             },
@@ -146,7 +155,7 @@
             },
             "hero": {
                 "greeting": "Bonjour, je suis",
-                "role": "Développeur Senior Microservices Java",
+                "role": "Ingénieur DevOps & Développeur Java",
                 "cta": "Voir Mon Travail",
                 "download_cv": "Télécharger CV"
             },

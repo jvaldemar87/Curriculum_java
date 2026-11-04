@@ -1,17 +1,15 @@
 ---
-title: "Senior Java Microservices Developer"
+title: "Java Microservices Developer & DevOps Support"
 company: "Stefanini Mexico"
 startDate: "2024-12-01"
-endDate: "Present"
-location: "Remote"
-tags: ["Java 21", "Spring Boot", "Apache Kafka", "MongoDB", "Clean Architecture", "SonarQube"]
+endDate: "2025-12-01"
+tags: ["Java", "Spring Boot", "Clean Architecture", "SonarQube", "AWS", "Jira", "Swagger / UML"]
 lang: "en"
-order: 1
+order: 2
 ---
 
-- Implemented **event-driven architectures using Apache Kafka**, enabling asynchronous communication and improving system scalability.
-- Optimized unstructured data storage with **MongoDB**, significantly increasing response speeds for high-demand modules.
-- **Reduced response times by 30%** and minimized redundant code by 25% by refactoring legacy endpoints into Clean Architecture (Model-Repository-Service).
-- Provided L3 support for microservices utilizing Spring Cloud Stream and Lombok to ensure application flexibility.
-- Documented 100% of the architecture using **UML and Swagger**, effectively reducing developer onboarding time by 25%.
-- Spearheaded security vulnerability mitigation through rigorous code analysis with **SonarQube**.
+- Optimized system performance and maintainability by refactoring legacy endpoints into **Clean Architecture**, reducing response time by **30%**.
+- Integrated continuous code quality practices (**DevSecOps**), identifying and mitigating vulnerabilities with **SonarQube**.
+- Contributed to the cloud ecosystem by supporting basic interactions with **AWS** services for development environments.
+- Documented the complete microservices and infrastructure architecture (**Swagger, UML**), reducing developer onboarding time by **25%**.
+- Developed and provided **L3 support** for RESTful APIs using the Spring stack (Boot, Data JPA, MVC) and Maven, managing incidents efficiently with **Jira**.

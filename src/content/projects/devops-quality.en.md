@@ -1,18 +1,19 @@
 ---
-title: "DevOps & Quality"
-description: "CI/CD pipelines, static code analysis, and security vulnerability mitigation for enterprise-grade software delivery."
+title: "DevOps & DevSecOps"
+description: "CI/CD pipelines, Infrastructure as Code, and security analysis for reliable software delivery."
 icon: "devops"
 gridSize: "medium"
-tags: ["CI/CD", "SonarQube", "Checkmarx", "Docker", "Linux", "ITIL"]
+tags: ["CI/CD", "Terraform", "Docker", "Kubernetes", "AWS IAM", "SonarQube"]
 lang: "en"
 order: 3
 ---
 
-## DevOps & Code Quality
+## Automation, Cloud & Security
 
-Ensuring software reliability through automated pipelines and security analysis:
+Automated delivery from code to production:
 
-- **CI/CD pipelines** for automated build, test, and deployment
-- **SonarQube** code quality gates and technical debt tracking
-- **Checkmarx** security vulnerability scanning and remediation
-- **ITIL** incident management with ServiceNow
+- **CI/CD pipelines** for unit tests, artifact creation, and container builds
+- **Terraform** for versioned network and database provisioning
+- **Docker** and **Kubernetes** for orchestration and scalability
+- **SonarQube** and **Checkmarx** for vulnerability mitigation
+- **AWS IAM** access control following the principle of least privilege

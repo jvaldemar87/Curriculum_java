@@ -1,17 +1,15 @@
 ---
-title: "Python & Données"
-description: "Traitement de données et développement d'API avec Python, FastAPI et Pandas pour les pipelines ETL et l'analytique."
+title: "Python & FastAPI"
+description: "Services Python et scripting pour les API et l'automatisation de l'infrastructure."
 icon: "python"
 gridSize: "small"
-tags: ["Python", "FastAPI", "Pandas", "ETL"]
+tags: ["Python", "FastAPI", "Bash", "Automatisation"]
 lang: "fr"
-order: 4
+order: 5
 ---
 
-## Python & Ingénierie de Données
+## Python & Scripting
 
-Capacités de traitement de données polyvalentes au-delà de l'écosystème Java:
-
-- **FastAPI** pour des APIs REST haute performance
-- **Pandas** pour la transformation de données et ETL
-- Pipelines automatisés de reporting et d'analytique
+- **FastAPI** pour les API REST
+- Scripts **Python** et **Bash/Shell** pour l'automatisation
+- Administration de serveurs Linux (Debian, Ubuntu, Zorin OS)

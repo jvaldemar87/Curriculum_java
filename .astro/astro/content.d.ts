@@ -164,48 +164,6 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "experience": {
-"grupo-salinas.en.md": {
-	id: "grupo-salinas.en.md";
-  slug: "grupo-salinasen";
-  body: string;
-  collection: "experience";
-  data: InferEntrySchema<"experience">
-} & { render(): Render[".md"] };
-"grupo-salinas.es.md": {
-	id: "grupo-salinas.es.md";
-  slug: "grupo-salinases";
-  body: string;
-  collection: "experience";
-  data: InferEntrySchema<"experience">
-} & { render(): Render[".md"] };
-"grupo-salinas.fr.md": {
-	id: "grupo-salinas.fr.md";
-  slug: "grupo-salinasfr";
-  body: string;
-  collection: "experience";
-  data: InferEntrySchema<"experience">
-} & { render(): Render[".md"] };
-"ine.en.md": {
-	id: "ine.en.md";
-  slug: "ineen";
-  body: string;
-  collection: "experience";
-  data: InferEntrySchema<"experience">
-} & { render(): Render[".md"] };
-"ine.es.md": {
-	id: "ine.es.md";
-  slug: "inees";
-  body: string;
-  collection: "experience";
-  data: InferEntrySchema<"experience">
-} & { render(): Render[".md"] };
-"ine.fr.md": {
-	id: "ine.fr.md";
-  slug: "inefr";
-  body: string;
-  collection: "experience";
-  data: InferEntrySchema<"experience">
-} & { render(): Render[".md"] };
 "ntt-data.en.md": {
 	id: "ntt-data.en.md";
   slug: "ntt-dataen";
@@ -244,6 +202,27 @@ declare module 'astro:content' {
 "stefanini.fr.md": {
 	id: "stefanini.fr.md";
   slug: "stefaninifr";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"tata-consultancy.en.md": {
+	id: "tata-consultancy.en.md";
+  slug: "tata-consultancyen";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"tata-consultancy.es.md": {
+	id: "tata-consultancy.es.md";
+  slug: "tata-consultancyes";
+  body: string;
+  collection: "experience";
+  data: InferEntrySchema<"experience">
+} & { render(): Render[".md"] };
+"tata-consultancy.fr.md": {
+	id: "tata-consultancy.fr.md";
+  slug: "tata-consultancyfr";
   body: string;
   collection: "experience";
   data: InferEntrySchema<"experience">
@@ -309,6 +288,27 @@ declare module 'astro:content' {
 "devops-quality.fr.md": {
 	id: "devops-quality.fr.md";
   slug: "devops-qualityfr";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"homelab.en.md": {
+	id: "homelab.en.md";
+  slug: "homelaben";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"homelab.es.md": {
+	id: "homelab.es.md";
+  slug: "homelabes";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"homelab.fr.md": {
+	id: "homelab.fr.md";
+  slug: "homelabfr";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">

@@ -4,17 +4,23 @@ lang: "fr"
 ---
 _chargement_technologies... [OK]_
 
-**[BACKEND]**
-- Java 21/11/8, Spring Boot, Spring Data JPA, Hibernate
-- Python (FastAPI, Pandas), TypeScript
+**[CLOUD & IaC]**
+- AWS (IAM), GCP, Terraform, Proxmox VE, Cloudflare Tunnels
 
-**[BASES DE DONNÉES & DATA]**
-- Oracle 11g (Expert Optimisation SQL), MongoDB, MySQL, SQL Server
-- Apache Kafka (Architectures orientées événements)
+**[CONTENEURS & ORCHESTRATION]**
+- Docker, Docker Compose, Kubernetes, K3s
 
-**[DEVOPS & QA]**
-- Pipelines CI/CD, Docker, Maven, Git
-- Analyse de Sécurité: SonarQube, Checkmarx
+**[CI/CD & DEVOPS]**
+- Git, GitHub, GitLab, Maven, SonarQube, Checkmarx, Jira, ServiceNow
+
+**[SYSTÈMES & RÉSEAUX]**
+- Linux avancé (Debian, Ubuntu, Zorin OS), Bash/Shell Scripting, TCP/IP
+
+**[BACKEND & LANGAGES]**
+- Java 8-17, Spring Boot, Spring Data JPA, Python, FastAPI
+
+**[BASES DE DONNÉES]**
+- Oracle 11g (optimisation SQL et procédures stockées)
 
 **[MÉTHODOLOGIES]**
-- Scrum, ITIL, Architecture Propre
+- DevSecOps, ITIL, Architecture Propre, GitOps

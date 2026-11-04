@@ -4,7 +4,7 @@ lang: "en"
 ---
 
 - **Name:** Jesús Valdemar Benítez Castañeda
-- **Role:** Senior Java Microservices Developer
+- **Role:** DevOps Engineer & Java Developer
 - **Location:** Guadalajara, Jalisco, MX (Remote Ready)
-- **Mission:** Building scalable, secure, and high-performance backend architectures.
-- **Status:** Open to new challenges in Java 21 / Spring Boot ecosystems.
+- **Mission:** Automating infrastructure and delivering reliable, secure, and scalable software.
+- **Status:** Open to new challenges in DevOps, Cloud, and Java / Spring Boot ecosystems.

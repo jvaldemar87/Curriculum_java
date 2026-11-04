@@ -1,17 +1,15 @@
 ---
-title: "Desarrollador Senior de Microservicios Java"
+title: "Desarrollador de Microservicios Java & Soporte DevOps"
 company: "Stefanini México"
 startDate: "2024-12-01"
-endDate: "Presente"
-location: "Remoto"
-tags: ["Java 21", "Spring Boot", "Apache Kafka", "MongoDB", "Clean Architecture", "SonarQube"]
+endDate: "2025-12-01"
+tags: ["Java", "Spring Boot", "Clean Architecture", "SonarQube", "AWS", "Jira", "Swagger / UML"]
 lang: "es"
-order: 1
+order: 2
 ---
 
-- Implementé **arquitecturas orientadas a eventos con Apache Kafka**, habilitando comunicación asíncrona y mejorando la escalabilidad del sistema.
-- Optimicé el almacenamiento de datos no estructurados con **MongoDB**, incrementando significativamente la velocidad de respuesta en módulos de alta demanda.
-- **Reduje los tiempos de respuesta en un 30%** y minimicé código redundante en un 25% mediante refactorización a Arquitectura Limpia (Model-Repository-Service).
-- Proporcioné soporte L3 para microservicios utilizando Spring Cloud Stream y Lombok para asegurar la flexibilidad de las aplicaciones.
-- Documenté el 100% de la arquitectura usando **UML y Swagger**, reduciendo el tiempo de onboarding de desarrolladores en un 25%.
-- Lideré la mitigación de vulnerabilidades de seguridad mediante análisis riguroso de código con **SonarQube**.
+- Optimicé el rendimiento y la mantenibilidad del sistema al refactorizar endpoints legacy a **Arquitectura Limpia (Clean Architecture)**, reduciendo el tiempo de respuesta en un **30%**.
+- Integré prácticas de calidad de código continua (**DevSecOps**), identificando y mitigando vulnerabilidades con **SonarQube**.
+- Colaboré en el ecosistema cloud apoyando en interacciones básicas con servicios de **AWS** para entornos de desarrollo.
+- Documenté la arquitectura completa de microservicios e infraestructura (**Swagger, UML**), reduciendo en un **25%** el tiempo de onboarding de nuevos desarrolladores.
+- Desarrollé y di soporte **L3** a APIs RESTful con el stack de Spring (Boot, Data JPA, MVC) y Maven, gestionando incidencias de forma ágil con **Jira**.
